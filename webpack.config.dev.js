@@ -3,6 +3,7 @@ import path from 'path';
 export default {
   entry: path.join(__dirname, '/client/index.js'),
   output: {
+    filename: 'bundle.js',
     path: '/'
   },
   module: {
@@ -10,11 +11,11 @@ export default {
       {
         test: /\.js$/,
         include: path.join(__dirname, 'client'),
-        loaders: ['babel']
+        loaders: ['babel-loader']
       }
     ]
   },
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['.js']
   }
 }
