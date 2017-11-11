@@ -21,7 +21,7 @@ export default {
       {
         test: /\.js$/,
         include: path.join(__dirname, 'client'),
-        loaders: ['babel-loader'] //'react-hot-loader/webpack'
+        loaders: ['babel-loader']
       }
     ]
   },
