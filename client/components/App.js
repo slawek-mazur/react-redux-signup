@@ -1,11 +1,15 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
+import FlashMessagesList from './FlashMessagesList';
 
 class App extends React.Component {
 
   render() {
     return (
-      <NavigationBar/>
+      <div className="headerWrapper">
+        <NavigationBar/>
+        <FlashMessagesList/>
+      </div>
     );
   }
 }
