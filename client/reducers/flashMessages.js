@@ -1,11 +1,12 @@
-import {ADD_FLASH_MESSAGE} from '../actions/types';
+import {ADD_FLASH_MESSAGE, REMOVE_FLASH_MESSAGE} from '../actions/types';
 import shortid from 'shortid';
 
 export default (state = [], action = {}) => {
+
+  console.log('reducer switch/case ' + action.type);
+
   switch (action.type) {
     case ADD_FLASH_MESSAGE:
-
-      console.log(action);
 
       return [
         ...state,
@@ -15,6 +16,9 @@ export default (state = [], action = {}) => {
           text: action.message.text
         }
       ];
+
+    case REMOVE_FLASH_MESSAGE:
+      return state.filter(message => message.id !== action.id);
 
     default:
       return state;
