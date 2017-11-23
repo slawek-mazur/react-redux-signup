@@ -3,6 +3,7 @@ exports.up = function (knex, Promise) {
     table.increments();
     table.string('email').notNullable().unique();
     table.string('password_digest').notNullable();
+    table.timestamps();
   });
 };
 
